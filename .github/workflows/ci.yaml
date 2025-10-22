@@ -27,7 +27,8 @@ jobs:
 
     - name: Run app
       run: npm start
-        - name: Deploy to EC2
+
+    - name: Deploy to EC2
       if: success()
       uses: appleboy/ssh-action@v1.0.0
       with:
@@ -39,4 +40,6 @@ jobs:
           git pull origin main
           npm install
           pm2 restart all
+
+
 
